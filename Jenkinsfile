@@ -11,7 +11,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch: 'main',
-                    url: 'https://github.com/<yourrepo>.git'
+                    url: 'https://github.com/sreekanthgorrela96/Gocdtest.git'
             }
         }
 
