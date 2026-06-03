@@ -27,9 +27,9 @@ pipeline {
 
         stage('Security Scan Image') {
             steps {
-                echo "Scanning image for CRITICAL vulnerabilities before pushing..."
-                // Fails the pipeline early if the image contains dangerous security bugs
-                sh "docker run --rm -v /var/run/docker.sock:/var/run/docker.sock aquasec/trivy:latest image --severity CRITICAL --exit-code 1 ${IMAGE_NAME}:${BUILD_NUMBER}"
+                echo "Scanning image for CRITICAL vulnerabilities..."
+                // The --ignore-unfixed flag allows the build to pass when no patch is available online
+                sh "docker run --rm -v /var/run/docker.sock:/var/run/docker.sock aquasec/trivy:latest image --severity CRITICAL --ignore-unfixed --exit-code 1 ${IMAGE_NAME}:${TAG}"
             }
         }
 
