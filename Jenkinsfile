@@ -5,7 +5,7 @@ pipeline {
         IMAGE_NAME = "sreekanthgorrela/flask-app"
         
         // Define your Jenkins Credentials IDs here for clean maintainability
-        DOCKER_CREDS_ID = 'dockerhub'
+        DOCKER_CREDS_ID = 'docker-hub-creds'
         GIT_CREDS_ID    = 'github-token2' // Ensure this matches your Jenkins credentials ID
     }
 
