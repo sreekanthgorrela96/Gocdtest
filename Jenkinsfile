@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = "sreekanthgorrela/flask-app"
+        IMAGE_NAME = "gorrelasreekanth/flask-app"
         
         // Define your Jenkins Credentials IDs here for clean maintainability
         DOCKER_CREDS_ID = 'docker-hub-creds'
