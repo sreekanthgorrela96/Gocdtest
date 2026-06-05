@@ -28,8 +28,8 @@ pipeline {
         stage('Security Scan Image') {
             steps {
                 echo "Scanning image for CRITICAL vulnerabilities..."
-                // The --ignore-unfixed flag allows the build to pass when no patch is available online
-                sh "docker run --rm -v /var/run/docker.sock:/var/run/docker.sock aquasec/trivy:latest image --severity CRITICAL --ignore-unfixed --exit-code 1 ${IMAGE_NAME}:${TAG}"
+                // FIXED: Swapped ${TAG} out for ${BUILD_NUMBER} so it evaluates correctly
+                sh "docker run --rm -v /var/run/docker.sock:/var/run/docker.sock aquasec/trivy:latest image --severity CRITICAL --ignore-unfixed --exit-code 1 ${IMAGE_NAME}:${BUILD_NUMBER}"
             }
         }
 
