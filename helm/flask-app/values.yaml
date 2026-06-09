@@ -2,7 +2,7 @@ replicaCount: 1
 
 image:
   repository: sreekanthgorrela/flask-app
-  tag: "16"
+  tag: "17"
 
 service:
   type: NodePort
